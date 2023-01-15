@@ -23,8 +23,7 @@ Student.prototype.addMarks = function (...mark){
   }
 }
 Student.prototype.getAverage = function () {
-  let sum = 0
-  this.marks.forEach(item => (sum += item));
+  let sum = this.marks.reduce((acc, item) => acc += item, 0);
   return sum/this.marks.length;
 }
 Student.prototype.exclude = function (reason) {
